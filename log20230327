@@ -1,0 +1,117 @@
+Microsoft Windows [Version 10.0.19044.2728]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\tk202\Documents\test-tk>git config --global user.name "tk-kaken"
+
+C:\Users\tk202\Documents\test-tk>git config --global user.mail "tk202303@outlook.jp"
+
+C:\Users\tk202\Documents\test-tk>echo "# Project test-tk" >> README.md
+
+C:\Users\tk202\Documents\test-tk>git init
+Initialized empty Git repository in C:/Users/tk202/Documents/test-tk/.git/
+
+C:\Users\tk202\Documents\test-tk>git add README.md
+
+C:\Users\tk202\Documents\test-tk>git commit -m "First commit. README.md"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'tk2023@DESKTOP-RU22KKO.(none)')
+
+C:\Users\tk202\Documents\test-tk>git config --global user.emal "tk202303@outlook.jp"
+
+C:\Users\tk202\Documents\test-tk>git config --global user.email "tk202303@outlook.jp"
+
+C:\Users\tk202\Documents\test-tk>git config --global user.name "tk-kaken"
+
+C:\Users\tk202\Documents\test-tk>git commit -m "First commit. README.md"
+[master (root-commit) d555f08] First commit. README.md
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+C:\Users\tk202\Documents\test-tk>git add origin git@github.com:tk-kaken/test-tk.git
+fatal: pathspec 'origin' did not match any files
+
+C:\Users\tk202\Documents\test-tk>branch -M main
+'branch' は、内部コマンドまたは外部コマンド、
+操作可能なプログラムまたはバッチ ファイルとして認識されていません。
+
+C:\Users\tk202\Documents\test-tk>git branch -M main
+
+C:\Users\tk202\Documents\test-tk>git add origin git@github.com:tk-kaken/test-tk.git
+fatal: pathspec 'origin' did not match any files
+
+C:\Users\tk202\Documents\test-tk>git remote add origin git@github.com:tk-kaken/test-tk.git
+
+C:\Users\tk202\Documents\test-tk>git push -u origin main
+The authenticity of host 'github.com (20.27.177.113)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? no
+Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+C:\Users\tk202\Documents\test-tk>git config --global user.email "tk202303@outlook.jp"
+
+C:\Users\tk202\Documents\test-tk>git config --global user.name "tk-kaken"
+
+C:\Users\tk202\Documents\test-tk>git init
+Reinitialized existing Git repository in C:/Users/tk202/Documents/test-tk/.git/
+
+C:\Users\tk202\Documents\test-tk>echo "# Project test-tk" >> README.md
+
+C:\Users\tk202\Documents\test-tk>git add README.md
+
+C:\Users\tk202\Documents\test-tk>git commit -m "First commit. README.md"
+[main 5af9911] First commit. README.md
+ 1 file changed, 1 insertion(+)
+
+C:\Users\tk202\Documents\test-tk>git branch -M main
+
+C:\Users\tk202\Documents\test-tk>git remote add origin git@github.com:tk-kaken/test-tk.git
+error: remote origin already exists.
+
+C:\Users\tk202\Documents\test-tk>git remote rm origin
+
+C:\Users\tk202\Documents\test-tk>git remote add origin git@github.com:tk-kaken/test-tk.git
+
+C:\Users\tk202\Documents\test-tk>git push -u origin main
+The authenticity of host 'github.com (20.27.177.113)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? no
+Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+C:\Users\tk202\Documents\test-tk>git push -u origin main
+The authenticity of host 'github.com (20.27.177.113)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (6/6), 489 bytes | 163.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:tk-kaken/test-tk.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+C:\Users\tk202\Documents\test-tk>

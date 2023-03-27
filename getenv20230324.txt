@@ -1,0 +1,81 @@
+C:\ProgramData
+C:\Users\tk202\AppData\Roaming
+1
+C:\Program Files\Common Files
+C:\Program Files (x86)\Common Files
+C:\Program Files\Common Files
+DESKTOP-RU22KKO
+C:\Windows\system32\cmd.exe
+C:/PROGRA~1/R/R-42~1.3/etc/curl-ca-bundle.crt
+:0
+C:\Windows\System32\Drivers\DriverData
+-1
+-1
+rpostback-askpass
+C:/Users/tk202/Documents
+C:
+\Users\tk202
+C:\Users\tk202\AppData\Local
+\\DESKTOP-RU22KKO
+tkAgg
+R_ARCH
+4
+C:\Users\tk202\OneDrive
+C:\Users\tk202\OneDrive
+undefined
+Windows_NT
+c:\rtools42\x86_64-w64-mingw32.static.posix\bin;c:\rtools42\usr\bin;C:\Program Files\R\R-4.2.3\bin\x64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\tk202\AppData\Local\Microsoft\WindowsApps;C:\Users\tk202\AppData\Roaming\TinyTeX\bin\windows;C:\Program Files\RStudio\resources\app\bin\quarto\bin;C:\Program Files\RStudio\resources\app\bin\postback
+.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+AMD64
+Intel64 Family 6 Model 142 Stepping 9, GenuineIntel
+6
+8e09
+C:\ProgramData
+C:\Program Files
+C:\Program Files (x86)
+C:\Program Files
+C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+C:\Users\Public
+utf-8
+/x64
+true
+true
+true
+gcc 10.4.0
+C:/PROGRA~1/R/R-42~1.3/doc
+C:/PROGRA~1/R/R-42~1.3
+C:/PROGRA~1/R/R-42~1.3/include
+C:/PROGRA~1/R/R-42~1.3/site-library
+C:\Users\tk202\AppData\Local/R/win-library/4.2
+c:/rtools42/x86_64-w64-mingw32.static.posix/bin;c:/rtools42/usr/bin
+ucrt
+C:/PROGRA~1/R/R-42~1.3/share
+C:/Users/tk202/Documents
+C:/Program Files/RStudio/resources/app/resources/mathjax-27
+\\.\pipe\40485-rsession
+WARN
+C:/Program Files/RStudio/resources/app/bin/rpostback.exe
+4a756615-98ba-43d2-aba2-fdf6380abe2d
+1
+true
+256
+84
+C:/Program Files/RStudio/resources/app/bin/msys-ssh-1000-18
+C:/Program Files/RStudio/resources/app/bin/quarto/bin/tools
+desktop
+5688
+40485
+tk2023
+C:/Program Files/RStudio/resources/app/bin/winutils
+Console
+rpostback-askpass
+C:
+C:\Windows
+C:\Users\tk202\AppData\Local\Temp
+xterm-256color
+C:\Users\tk202\AppData\Local\Temp
+DESKTOP-RU22KKO
+DESKTOP-RU22KKO
+tk2023
+C:\Users\tk202
+C:\Windows

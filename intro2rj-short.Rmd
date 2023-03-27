@@ -1,0 +1,260 @@
+---
+title: "Rではじめるデータ・サイエンス"
+author: "氏名（Name）"
+date: "Last Updated: `r Sys.Date()`"
+header-includes:
+  - \usepackage{xeCJK}
+output:
+  pdf_document: 
+    latex_engine: xelatex
+  html_notebook:
+    toc: yes
+    toc_float: yes
+    highlight: tango
+    theme: cerulean
+    number_sections: yes
+mainfont: Noto Sans
+---
+
+右上の Code マークから、ソースファイルもダウンロードすることができます。
+
+**Posit (RStudio) Cloud での実習**
+
+RNotebook ファイルを新規作成し、このページを、全選択して、コピー・ペーストします。(`rmarkdown` のインストールが必要です)
+Save As ... または、フロッピーディスクマークをおして、ds-edu などとして保存。
+説明を読みながら、コードチャンクと言われる、色が変わっている、の右上にある三角印を押すと、実行されます。
+
+このあとで、RNotebook についても、少し説明します。
+
+# 準備：Posit Cloud ログイン
+
+Posit Cloud (https://posit.cloud/) のアカウントを作成して、ログインした状態から始めます。
+
+無論 RStudio で R を利用できる方は、ほとんど同じですが、Posit Cloud には、ファイルや、データも入っていますので、そのまま活用することが可能です。
+
+RStudio での、動作不良の場合の対応は省略させていただきます。できれば、上のメニューの File から、New Project を選択して、Project を作って、そこで作業をされることをお勧めします。
+
+問題がある時は、下のサイトを参照してください。Posit Cloud についても、多少の説明が書いてあります。
+
+  https://icu-hsuzuki.github.io/ds4aj/ronrstudio.html
+
+右上の New Project を選択して、始めることが普通ですが、本日は、
+
+このリンクにアクセスしていただき、Save a Permanent Copy を選択してくださると、そのなかで、自分のプロジェクトとして、実行することが可能になります。
+
+  https://posit.cloud/content/5539763
+
+# はじめに
+## 基本コマンド - in Console
+
+下のコマンドを左下の窓枠(Pane)に入れてみてください。
+
+-   `head(cars)`
+-   `str(cars)`
+-   `summary(cars)`
+-   `df <- cars`
+    -   `<-` と `_` と `%>%` と \` back tick のキーボード上での位置の確認
+-   `head(df)`
+-   `plot(df)`
+-   `View(cars)` または、右上の Environment から、`df_cars` をクリック
+-   `?cars` または Help 検索窓で `cars`, `head` など
+
+### 実際の出力
+
+```{r}
+head(cars)
+```
+
+```{r}
+str(cars)
+```
+
+```{r}
+summary(cars)
+```
+
+```{r}
+df <- cars
+```
+
+```{r}
+head(df)
+```
+
+```{r}
+plot(df)
+```
+
+
+おすすめ：`Sys.setenv(LANG = "en")`
+
+システム言語を英語に設定すると、不明のエラーメッセージがでたときにも、検査で解決できることが多い。
+
+### 参考
+
+[データーサインスをはじめましょう](https://icu-hsuzuki.github.io/ds4aj/) の中[コンソールで実行](https://icu-hsuzuki.github.io/ds4aj/ronrstudio.html#コンソールで実行---run-in-console) に、簡単な説明があります。
+
+## Package の確認とインストール
+
+Rパッケージは、Rの拡張機能で、コード、データ、ドキュメントを標準化されたコレクション形式で含んでおり、標準的なものは、R Studio の Top Bar の Tool \> Install Packages からインストールできます。
+
+-   次の三つをインストールします: `tidyverse`, `rmarkdown`, `WDI`
+-  Tools から Install packages を選び、一つ一つ入れていくと、install できます。少し時間がかかります。
+
+### 備考
+
+R は、多くの方が、パッケージを開発して、それぞれの分野で、使いやすくしていった統計解析のためのコンピュータ言語です。ただ、基本をのぞいて、それぞれの好みにあわせて、開発された面もあり、統一性にはかける言語です。あとで説明する、探索的データ分析（Exploratory Data Analysis）のために必要な基本的なものを、整合性のある形で、再構築したものが、`tidyverse` パッケージで、中心となった、H. Wickham は、RStudio（現在の [Posit](https://posit.co)） に加わりました。そのメンバーの、Y. Xie（谢益辉） たちが開発したものが、`rmarkdown` に関連したパッケージです。
+
+## R Markdown 入門
+
+### R Notebook
+
+R Markdownはデータサイエンスのためのオーサリングフレームワーク。
+
+コード（プログラム）とその実行結果、を記録・表示し、高品質のレポートの作成を可能にします。
+
+R Notebook は、独立してインタラクティブに実行できるチャンクを持つR Markdownドキュメントの一つの形式で、入力のすぐ下に出力が表示することができます。
+
+1.  File \> New File \> R Notebook
+2.  Save with a file name, say, test-notebook
+3.  Preview by [Preview] button
+4.  Run Code Chunk plot(cars) and then Preview again.
+
+* テンプレートファイルの利用
+
+下のリンクを開き、全部を選択し、R Notebook ファイルも全選択して貼り付ければ、日本版も見ることができます。
+
+* 日本語ノートブック：https://ds-sl.github.io/intro2r/RNotebook-J.html
+* いろいろな形式の出力：https://ds-sl.github.io/intro2r/Rmarkdown-J.html
+
+### `intro2rj.Rmd`
+
+右下の File タブから、`intro2rj.Rmd` を開きます。
+Preview の右のギアマークの Preview in Viewer Pane を選択してから、Preview バタンを押すと、内容を確認することができます。
+
+あとから使うので、ロードしておきます。最初に次のようなコードを実行します。右の三角を押します。
+
+Posit Cloud のサイトには、`data` ディレクトリ（フォルダ）が作成されていますが、
+
+### 参考
+
+[データーサインスをはじめましょう](https://icu-hsuzuki.github.io/ds4aj/) の中の[R Markdown](https://icu-hsuzuki.github.io/ds4aj/rmarkdown.html#rmarkdown) に、“Reproducible and Literate Programming” （Reproducible （再現可能）かつ、Literate　な（理解できるように記述した）Program（プログラム・コード）を共有すること）をたいせつにする RMarkdown の重要性について簡単に書いてあります。
+
+# R Notebook での実習
+## 準備 Setup
+
+データディレクトリを作成しておきます。今後、データは、このディレクトリに保存します。すでに、存在する場合は、その旨メッセージが出ますが、中身が消去されることはありません。
+
+```{r eval=FALSE}
+dir.create("./data")
+```
+
+パッケージはインストールしてあっても、利用するときには、次のように使える状態に（ロード）します。
+
+一つ目は、`tidyverse` ですが、もう一つは、あとから活用する、世界開発指標に関するデータを利用するためのパッケージです。
+
+```{r}
+library(tidyverse)
+library(WDI)
+```
+
+## 世界開発指標 (WDI)
+
+例から始めます。
+
+次のコードは、国別に、GDP の大きい方から並べたものです。
+
+```{r cache=TRUE}
+WDI(country = "all", indicator = c(gdp = "NY.GDP.MKTP.CD"),
+    extra=TRUE) %>% drop_na(gdp) %>%
+  filter(year==max(year), income !="Aggregates") %>% 
+  drop_na(region) %>% arrange(desc(gdp))
+```
+
+3兆ドルを超えている6つの国についての過去の推移をグラフにしたものです。
+
+```{r cache=TRUE}
+WDI(country = c("CN","GB","JP","IN","US","DE"), indicator = c(gdp = "NY.GDP.MKTP.CD"), extra=TRUE) %>% drop_na(gdp) %>% 
+  ggplot(aes(year, gdp, col = country)) + geom_line() +
+  labs(title = "WDI NY.GDP.MKTP.CD: gdp")
+```
+
+```{r cache=TRUE}
+WDI(country = c("CN","IN","JP","US"), 
+    indicator = c(gdp_growth_rate = "NY.GDP.MKTP.KD.ZG"), extra=TRUE) %>%
+  drop_na(gdp_growth_rate) %>% 
+  ggplot(aes(year, gdp_growth_rate, col = country)) + geom_line() +
+  labs(title = paste("WDI NY.GDP.MKTP.KD.ZG: gdp growth rate"))
+```
+
+### 注意
+
+一つ一つのコードを丁寧に説明し、理解することは、後回しにし、少しずつ学んでいくことにし、ここでは、それぞれの問題意識のもとで、どのようなことができるかを、理解するため、活用することを優先したいと思います。
+
+
+## 世界開発指標 (WDI)
+
+例から始めます。
+
+次のコードは、国別に、GDP の大きい方から並べたものです。
+
+```{r cache=TRUE}
+WDI(country = "all", indicator = c(gdp = "NY.GDP.MKTP.CD"),
+    extra=TRUE) %>% drop_na(gdp) %>%
+  filter(year==max(year), income !="Aggregates") %>% 
+  drop_na(region) %>% arrange(desc(gdp))
+```
+
+3兆ドルを超えている6つの国についての過去の推移をグラフにしたものです。
+
+```{r cache=TRUE}
+WDI(country = c("CN","GB","JP","IN","US","DE"), indicator = c(gdp = "NY.GDP.MKTP.CD"), extra=TRUE) %>% drop_na(gdp) %>% 
+  ggplot(aes(year, gdp, col = country)) + geom_line() +
+  labs(title = "WDI NY.GDP.MKTP.CD: gdp")
+```
+
+```{r cache=TRUE}
+WDI(country = c("CN","IN","JP","US"), 
+    indicator = c(gdp_growth_rate = "NY.GDP.MKTP.KD.ZG"), extra=TRUE) %>%
+  drop_na(gdp_growth_rate) %>% 
+  ggplot(aes(year, gdp_growth_rate, col = country)) + geom_line() +
+  labs(title = paste("WDI NY.GDP.MKTP.KD.ZG: gdp growth rate"))
+```
+
+### 注意
+
+一つ一つのコードを丁寧に説明し、理解することは、後回しにし、少しずつ学んでいくことにし、ここでは、それぞれの問題意識のもとで、どのようなことができるかを、理解するため、活用することを優先したいと思います。
+
+### 上で使った指標 (WDI) コード
+
+-   NY.GDP.MKTP.CD: GDP (current US\$)
+-   NY.GDP.MKTP.KD.ZG: GDP growth (annual %)
+
+### 世界開発指標 (WDI) を探してみましょう
+
+> WDIは、世界の開発状況と、貧困との戦いに関する、適切で上質、かつ、国際的に比較可能な時系列の統計データを編纂したものです。このデータベースは、217の経済と40以上の国グループについて1,400の時系列指標を含み、指標のデータの多くは50年以上前に遡ることができます。
+
+下の２箇所から探すことができます。
+
+-   [世界銀行（World Bank）オープンデータ](https://data.worldbank.org)
+    -   Country / Indicator \> Featured & All \> Details
+    
+-   [世界開発指標 (WDI)](https://datatopics.worldbank.org/world-development-indicators/) :
+    -   テーマ: 貧困と格差、人間、環境、経済、国家と市場、グローバルリンク集（Poverty and Inequality, People, Environment, Economy, States and Markets, Global Links）
+
+### 参考
+
+[データーサインスをはじめましょう](https://icu-hsuzuki.github.io/ds4aj/) の中の [パブリックデータ](https://icu-hsuzuki.github.io/ds4aj/publicdata.html#publicdata)に、例があります。また、[世界開発指標](https://icu-hsuzuki.github.io/ds4aj/worldbank.html#world-development-indicator-wdi) の項に、上で紹介したサイトから、どのように、WDI コードを見つけるかの説明があります。
+
+### 練習 1. - 調べてみたい WDI
+
+世界開発指標のコードをいくつか、リストしてみましょう。
+
+# WDI パッケージ
+
+`WDI` パッケージで、データをダウンロードしたり、探したり、詳細情報を得たりできます。
+
+検索や、ダウンロード方法が理解できるように、例示してありますが、ざっと確認して、4.3.3 のテンプレートを利用すると、グラフを描くこともできます。
+
+
+
